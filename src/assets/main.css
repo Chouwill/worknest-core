@@ -1,4 +1,10 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@plugin "daisyui";
+
+/* 拿掉 daisy Ui  label border */
+.input {
+  border: none;
+}
 
 .main-button {
   background-color: #8d3e0f;

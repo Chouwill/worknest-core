@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import HomeContent from '@/components/HomePage/HomeContent.vue';
-  // import Information from '../components/Information.vue';
+import HomeContent from '@/components/HomePage/HomeContent.vue'
+import HomeFilterForm from '@/components/HomePage/HomeFilterForm.vue'
+</script>
 
-  </script>
-
-  <template>
-      <div class="contciner">
-      <HomeContent />
-      <!-- <Information /> -->
-      </div>
-  </template>
+<template>
+  <div class="contciner">
+    <HomeContent />
+    <HomeFilterForm />
+  </div>
+</template>
