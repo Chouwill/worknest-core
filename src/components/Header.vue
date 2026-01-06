@@ -29,10 +29,16 @@
 
         <!-- Navigation -->
         <div class="relative">
-
           <div class="flex gap-3">
-            <button class="btn btn-active bg-[#E6B566] text-[#4A1F00] p-5">登入</button>
-            <button class="btn btn-active bg-transparent border border-[#E6B566] text-[#E6B566] p-5">註冊</button>
+            <button class="btn btn-active bg-[#E6B566] text-[#4A1F00] p-5" @click="openModal">
+              登入
+            </button>
+            <button
+              @click="openModal"
+              class="btn btn-active bg-transparent border border-[#E6B566] text-[#E6B566] p-5"
+            >
+              註冊
+            </button>
           </div>
 
           <button
@@ -62,12 +68,16 @@
         </div>
       </div>
     </div>
+    <AuthForm ref="authFormRef" />
   </header>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import AuthForm from './Auth/AuthForm.vue'
 import { useRouter } from 'vue-router'
+
+const authFormRef = ref(null)
 
 const router = useRouter()
 
@@ -108,5 +118,9 @@ const handleLoginOutButtonClick = () => {
 const closeLogout = () => {
   // 關閉登出提示框
   isLoginOut.value = false
+}
+
+function openModal() {
+  authFormRef.value.openAuthForm()
 }
 </script>
